@@ -1,0 +1,147 @@
+:root {
+    --veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+    --softRed: hsl(14, 88%, 65%);
+    --softViolet: hsl(273, 75%, 66%);
+    --softBlue: hsl(240, 73%, 65%);
+    --veryDarkGrayishBlue: hsl(237, 12%, 33%);
+    --DarkGrayishBlue: hsl(240, 6%, 50%);
+    --lightGrayishBlue: hsl(240, 5%, 91%);
+}
+
+/* GENERAL */
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background: linear-gradient(var(--softViolet), var(--softBlue));
+}
+main {
+    border-radius: 25px;
+    box-shadow: 0px 5px 20px var(--veryDarkGrayishBlue);
+    background-color: hsl(0, 0%, 99%);
+    background-repeat: no-repeat;
+}
+
+/* Left */
+picture {
+    position: relative;
+}
+#box {
+    position: absolute;
+}
+
+/* Right */
+section {
+    padding-right: 5%;
+}
+section p {
+    color: var(--DarkGrayishBlue);
+    padding-right: 10px;
+    font-size: 12px;
+}
+section a {
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--DarkGrayishBlue);
+    text-decoration: none;
+    font-weight: 700;
+}
+section img {   
+    padding-top: 9px;
+    float: right;
+}
+h1 {
+    font-size: 2rem;
+}
+hr {
+    border: 0;
+    border-top: 1px solid var(--lightGrayishBlue);
+    margin: 15px auto;
+}
+
+/* JavaScript Classes */
+.hidden {
+    display: none;
+}
+.transform {
+    transform: rotate(180deg);
+    padding-top: 0;
+    padding-bottom: 9px;
+}
+.dark {
+    color: var(--veryDarkDesaturatedBlue);
+}
+
+/* Footer */
+footer { 
+    font-size: 11px; 
+    text-align: center; 
+}
+footer a { 
+    color: white; 
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+    main {
+        margin: 40% auto 20%;
+        width: 95%;
+        background-image: url(images/bg-pattern-mobile.svg);
+        background-position-x: center; 
+    }
+    #lady {
+        position: relative;
+        display: block;
+        width: 70%;
+        top: -110px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    } 
+    #box {
+        width: 20%;
+        left: 60px;
+        top: -20px;
+    }
+    section {
+        width: 85%;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+    h1 {
+        text-align: center;
+        margin-top: -50px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 700px) {
+    main {
+        width: 65%;
+        margin: 10% auto;
+        display: flex;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-position: -580px -320px;
+    }
+    #lady {
+        width: 100%;
+        position: relative;
+        left: -85px;
+        margin: 50px auto;
+    }
+    #box {
+        width: 30%;
+        left: -75px;
+        top: 210px;
+    }
+    section {
+        width: 40%;
+    }
+    section a:hover {
+        color: var(--softRed);
+    }
+    h1 {
+        padding-top: 15px;
+    }
+    .left {
+        transform: translate(-50px, 0);
+    }
+}

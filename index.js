@@ -1,24 +1,30 @@
-var anch = document.querySelectorAll("section a");
-var para = document.querySelectorAll("section p");
-var imag = document.querySelectorAll("section img");
-var box = document.querySelector("#box");
+var a = document.querySelectorAll('a');
+var p = document.querySelectorAll('p');
 
-for (var i=0; i<5; i++) {
-    anch[i].addEventListener("click", function() {
-        var cnum = this.classList[0];
-        box.classList.add('left');
-        for (var j=0; j<5; j++) {
-            var bool = para[j].classList.contains(cnum);
-            if (bool == true) {
-                para[j].classList.remove('hidden');
-                imag[j].classList.add('transform');
-                anch[j].classList.add('dark');
-            } else {
-                para[j].classList.add('hidden');
-                imag[j].classList.remove('transform');
-                anch[j].classList.remove('dark');
-        }};
-    });
-};
+a.forEach(element => {
+    element.addEventListener("click", function(){
+        var className = this.classList[0];
 
+        if (this.classList.contains("selected-a")) {
+            this.classList.remove("selected-a");      
+            p.forEach(item => {
+                if (item.classList.contains(className)){
+                    item.classList.add("hidden-p");
+                }
+            });
+            return;
+        }
 
+        a.forEach(item => {
+            item.classList.remove("selected-a");
+        });
+        this.classList.add("selected-a");
+
+        p.forEach(item => {
+            item.classList.add("hidden-p");
+            if (item.classList.contains(className)){
+                item.classList.remove("hidden-p");
+            }
+        });
+    })
+});
